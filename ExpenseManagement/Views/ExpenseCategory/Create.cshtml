@@ -1,0 +1,31 @@
+﻿@model ExpenseCategoryEntity
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<form method="post" asp-action="Create">
+    <div class="border p-5">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group row">
+            <h2 class="text-black-50 pl-3">Record your Expense Category</h2>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="ExpenseCategoryName"></label>
+                <input asp-for="ExpenseCategoryName" class="form-control" />
+                <span class="text-danger" asp-validation-for="ExpenseCategoryName"></span>
+            </div>
+        </div>
+        <br />
+
+        <div class="w-12 btn-group" role="group">
+            <input type="submit" value="Save" class="btn btn-primary mx-1" />
+            <a asp-controller="ExpenseCategory" asp-action="Index" class="btn btn-info">Back</a>
+        </div>
+    </div>
+
+</form>
